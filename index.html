@@ -15,54 +15,46 @@
 <body class="bg-[#FAF6EE] text-[#3D251E] min-h-screen flex flex-col pt-20">
 
     <script id="configuration-site">
-        // TEXTES DU SITE (Modifiez les phrases entre les guillemets)
-        const defaultTexts = {
+        // TEXTES DU SITE
+        const siteTexts = {
             subtitle: "La chaleur du folk, le souffle de la danse",
-            newsTitle: "Un nouveau né du folk !",
-            newsText: "Inspiré des parquets de bal, notre groupe s'est créé cette année. Préparez-vous à voyager entre mélodies envoûtantes et rythmiques endiablées.",
-            bioText: "T-RAD, c’est la rencontre de musiciens passionnés par le folk et les musiques à danser. Viole de gambe, guitare et flûte se mêlent pour créer un son à la fois ancré dans la tradition et moderne."
+            newsTitle: "Nouvel Album en préparation !",
+            newsText: "Inspiré des parquets de bal et de la douceur des sous-bois, notre prochain album retrace nos aventures de l'été. Préparez-vous à voyager entre mélodies envoûtantes et rythmiques endiablées.",
+            bioText: "T-RAD, c’est la rencontre de musiciens passionnés par le patrimoine folk et les musiques à danser. Violon, accordéon diatonique, guitare et flûte se mêlent pour créer un son à la fois ancré dans la tradition et moderne."
         };
 
-        // AGENDA PAR DÉFAUT (Avec 3 URLs possibles par événement : ticketUrl, fbUrl, orgUrl)
-        // Laissez une URL vide "" si vous ne voulez pas afficher son bouton.
-        const defaultAgenda = [
+        // AGENDA (Ajoutez ou modifiez vos dates ici)
+        // Vous pouvez mettre un lien ou laisser vide "" s'il n'y en a pas.
+        const siteAgenda = [
             { 
-                id: 1, 
-                date: "Novembre 2026", 
-                title: "Le Grand Bal des Compagnons", 
-                place: "Villeneuve d'Ascq)",
+                date: "15 Mai 2026", 
+                title: "Le Grand Bal de Printemps", 
+                place: "Gennetines (03)",
                 ticketUrl: "https://example.com/billets", 
                 fbUrl: "https://facebook.com/events/1", 
                 orgUrl: "https://example.com/organisateur" 
             },
             { 
-                id: 2, 
-                date: "Octobre ", 
-                title: "Répétition publique notre première sortie", 
-                place: "Villeneuve d'Ascq",
+                date: "24 Juin 2026", 
+                title: "Festival Folk en Forêt", 
+                place: "Compiègne (60)",
                 ticketUrl: "", 
                 fbUrl: "https://facebook.com/events/2", 
                 orgUrl: "" 
             }
         ];
 
-        // PHOTOS PAR DÉFAUT (Copiez les liens de vos photos ici)
-        const defaultPhotos = [
+        // PHOTOS (Ajoutez les adresses de vos images ici)
+        const sitePhotos = [
             "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=800",
             "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800",
             "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?q=80&w=800"
         ];
 
-        // VIDÉOS PAR DÉFAUT
-        const defaultVideos = [
-            { id: 1, title: "T-RAD - Live à Gennetines (Teaser)", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
-            { id: 2, title: "xxxxxxxx", url: "" }
-        ];
-
-        // MUSIQUES DE L'ESPACE PRIVÉ PAR DÉFAUT
-        const defaultMusic = [
-            { id: 1, title: "Emmet's Edgehog suite", url: "https://www.youtube.com/watch?v=SN6339qtYis" },
-            { id: 2, title: "xxxxxe", url: "" }
+        // VIDÉOS (Ajoutez vos liens YouTube ou Vimeo)
+        const siteVideos = [
+            { title: "T-RAD - Live à Gennetines (Teaser)", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
+            { title: "Répétitions en forêt (Acoustique)", url: "" }
         ];
     </script>
     <header class="fixed top-0 left-0 right-0 bg-[#FAF6EE]/90 backdrop-blur-md border-b border-[#1E352F]/10 z-50">
@@ -72,8 +64,6 @@
                 <a href="#accueil" class="font-medium text-[#1E352F]/80 hover:text-[#D36B4F] transition-colors">Accueil</a>
                 <a href="#agenda" class="font-medium text-[#1E352F]/80 hover:text-[#D36B4F] transition-colors">Agenda</a>
                 <a href="#medias" class="font-medium text-[#1E352F]/80 hover:text-[#D36B4F] transition-colors">Médias</a>
-                <a href="#espace-prive" class="font-medium text-[#1E352F]/80 hover:text-[#D36B4F] transition-colors">Espace Privé</a>
-                <a href="#admin" class="font-medium text-[#D36B4F] hover:underline transition-colors">Admin ⚙️</a>
                 <a href="#contact" class="font-medium text-[#1E352F]/80 hover:text-[#D36B4F] transition-colors">Contact</a>
             </nav>
         </div>
@@ -83,7 +73,7 @@
         <div class="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay" style="background-image: url('https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=1600');"></div>
         <div class="relative z-10 max-w-3xl">
             <h1 class="font-serif text-6xl md:text-8xl font-bold text-[#FAF6EE] mb-4">T-RAD</h1>
-            <p id="hero-subtitle" class="font-serif italic text-xl md:text-2xl text-[#FAF6EE]/90 mb-8">La chaleur du folk, le souffle de la danse</p>
+            <p id="hero-subtitle" class="font-serif italic text-xl md:text-2xl text-[#FAF6EE]/90 mb-8"></p>
             <a href="#agenda" class="bg-[#D36B4F] text-[#FAF6EE] px-8 py-3 rounded-md font-semibold hover:bg-[#D36B4F]/90 transition-all shadow-md">Voir nos dates</a>
         </div>
     </section>
@@ -91,16 +81,12 @@
     <section class="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
             <span class="text-[#D36B4F] font-semibold tracking-wider uppercase text-sm">Actualités</span>
-            <h2 id="news-title" class="font-serif text-4xl text-[#1E352F] mt-2 mb-6">Nouvel Album en préparation !</h2>
-            <p id="news-text" class="text-[#3D251E]/80 leading-relaxed mb-6">
-                Inspiré des parquets de bal et de la douceur des sous-bois, notre prochain album retrace nos aventures de l'été. Préparez-vous à voyager entre mélodies envoûtantes et rythmiques endiablées.
-            </p>
+            <h2 id="news-title" class="font-serif text-4xl text-[#1E352F] mt-2 mb-6"></h2>
+            <p id="news-text" class="text-[#3D251E]/80 leading-relaxed mb-6"></p>
         </div>
         <div class="bg-[#1E352F]/5 p-8 rounded-2xl border border-[#1E352F]/10">
             <h3 class="font-serif text-2xl text-[#1E352F] mb-4">Qui sommes-nous ?</h3>
-            <p id="bio-text" class="text-[#3D251E]/80 leading-relaxed">
-                T-RAD, c’est la rencontre de musiciens passionnés par le patrimoine folk et les musiques à danser. Violon, accordéon diatonique, guitare et flûte se mêlent pour créer un son à la fois ancré dans la tradition et moderne.
-            </p>
+            <p id="bio-text" class="text-[#3D251E]/80 leading-relaxed"></p>
         </div>
     </section>
 
@@ -126,126 +112,12 @@
         </div>
     </section>
 
-    <section id="espace-prive" class="bg-[#1E352F]/5 py-16 border-t border-[#1E352F]/10">
-        <div class="max-w-4xl mx-auto px-4">
-            <h2 class="font-serif text-4xl text-[#1E352F] mb-8 text-center">🔐 Espace Privé Membres</h2>
-            
-            <div id="prive-login-box" class="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-md border border-[#1E352F]/10">
-                <p class="text-sm text-center mb-4">Entrez le mot de passe membre (<strong>2026</strong>) :</p>
-                <input type="password" id="prive-pass" class="w-full p-3 rounded border border-[#1E352F]/20 bg-[#FAF6EE] mb-4" placeholder="Mot de passe">
-                <button onclick="checkPriveLogin()" class="w-full bg-[#1E352F] text-white py-2 rounded">Se connecter</button>
-                <p id="prive-error" class="text-red-500 text-xs mt-2 hidden">Mot de passe incorrect.</p>
-            </div>
-
-            <div id="prive-content" class="hidden grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-2xl border border-[#1E352F]/10 shadow-sm">
-                    <h3 class="font-serif text-2xl text-[#1E352F] mb-4">📌 To-Do List Répétitions</h3>
-                    <div class="flex gap-2 mb-4">
-                        <input type="text" id="todo-input" class="flex-grow p-2 border rounded bg-[#FAF6EE]" placeholder="Nouvelle tâche...">
-                        <button onclick="addTodo()" class="bg-[#D36B4F] text-white px-4 py-2 rounded">+</button>
-                    </div>
-                    <ul id="todo-list" class="space-y-2"></ul>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl border border-[#1E352F]/10 shadow-sm">
-                    <h3 class="font-serif text-2xl text-[#1E352F] mb-4">🎵 Maquettes & Fichiers</h3>
-                    <div id="music-list" class="space-y-4"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="admin" class="bg-white py-16 border-t border-[#1E352F]/10">
-        <div class="max-w-5xl mx-auto px-4">
-            <h2 class="font-serif text-4xl text-[#1E352F] mb-8 text-center">⚙️ Console d'Administration</h2>
-
-            <div id="admin-login-box" class="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-md border border-[#1E352F]/10">
-                <p class="text-sm text-center mb-4">Entrez le mot de passe administrateur (<strong>admin</strong>) :</p>
-                <input type="password" id="admin-pass" class="w-full p-3 rounded border border-[#1E352F]/20 bg-[#FAF6EE] mb-4" placeholder="Code admin">
-                <button onclick="checkAdminLogin()" class="w-full bg-[#D36B4F] text-white py-2 rounded">Se connecter</button>
-                <p id="admin-error" class="text-red-500 text-xs mt-2 hidden">Code incorrect.</p>
-            </div>
-
-            <div id="admin-content" class="hidden space-y-12">
-                <div class="bg-[#FAF6EE] p-6 rounded-2xl border border-[#1E352F]/10">
-                    <h3 class="font-serif text-2xl text-[#1E352F] mb-4">📝 Modifier les textes principaux</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <label class="block text-xs font-semibold mb-1">Sous-titre d'accueil (Hero)</label>
-                            <input type="text" id="edit-hero-subtitle" class="w-full p-3 rounded border bg-white">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold mb-1">Titre d'Actualité</label>
-                            <input type="text" id="edit-news-title" class="w-full p-3 rounded border bg-white">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold mb-1">Texte d'Actualité</label>
-                            <textarea id="edit-news-text" rows="3" class="w-full p-3 rounded border bg-white"></textarea>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold mb-1">Texte de Biographie</label>
-                            <textarea id="edit-bio-text" rows="3" class="w-full p-3 rounded border bg-white"></textarea>
-                        </div>
-                        <button onclick="saveTexts()" class="bg-[#1E352F] text-white px-6 py-2 rounded font-semibold">Enregistrer les modifications</button>
-                    </div>
-                </div>
-
-                <div class="bg-[#FAF6EE] p-6 rounded-2xl border border-[#1E352F]/10">
-                    <h3 class="font-serif text-2xl text-[#1E352F] mb-4">📅 Gérer l'Agenda (Concerts & Liens)</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                        <input type="text" id="add-date" class="p-3 border rounded bg-white text-sm" placeholder="Ex: 15 Mai 2026">
-                        <input type="text" id="add-title" class="p-3 border rounded bg-white text-sm" placeholder="Nom du concert">
-                        <input type="text" id="add-place" class="p-3 border rounded bg-white text-sm" placeholder="Ville (Département)">
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                        <input type="text" id="add-ticket-url" class="p-3 border rounded bg-white text-sm" placeholder="URL Billetterie (optionnel)">
-                        <input type="text" id="add-fb-url" class="p-3 border rounded bg-white text-sm" placeholder="URL Événement Facebook (optionnel)">
-                        <input type="text" id="add-org-url" class="p-3 border rounded bg-white text-sm" placeholder="URL Organisateur (optionnel)">
-                    </div>
-                    <button onclick="addAgendaItem()" class="bg-[#D36B4F] text-white px-6 py-2 rounded font-semibold mb-6">Ajouter cette date</button>
-                    
-                    <h4 class="font-bold text-[#1E352F] mb-2">Dates actuelles :</h4>
-                    <div id="admin-agenda-list" class="space-y-2"></div>
-                </div>
-
-                <div class="bg-[#FAF6EE] p-6 rounded-2xl border border-[#1E352F]/10">
-                    <h3 class="font-serif text-2xl text-[#1E352F] mb-4">🖼️ Gérer la Galerie Photo</h3>
-                    <div class="flex gap-2 mb-4">
-                        <input type="text" id="add-photo-url" class="flex-grow p-3 border rounded bg-white text-sm" placeholder="Collez l'adresse URL d'une photo">
-                        <button onclick="addPhotoItem()" class="bg-[#D36B4F] text-white px-6 py-3 rounded font-semibold">Ajouter</button>
-                    </div>
-                    <div id="admin-photos-list" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
-                </div>
-
-                <div class="bg-[#FAF6EE] p-6 rounded-2xl border border-[#1E352F]/10">
-                    <h3 class="font-serif text-2xl text-[#1E352F] mb-4">🎥 Gérer les Vidéos</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                        <input type="text" id="add-video-title" class="p-3 border rounded bg-white text-sm" placeholder="Titre de la vidéo">
-                        <input type="text" id="add-video-url" class="p-3 border rounded bg-white text-sm" placeholder="Lien YouTube ou Vimeo">
-                    </div>
-                    <button onclick="addVideoItem()" class="bg-[#D36B4F] text-white px-6 py-2 rounded font-semibold mb-6">Ajouter la vidéo</button>
-                    <div id="admin-videos-list" class="space-y-2"></div>
-                </div>
-
-                <div class="bg-[#FAF6EE] p-6 rounded-2xl border border-[#1E352F]/10">
-                    <h3 class="font-serif text-2xl text-[#1E352F] mb-4">🎵 Gérer les Maquettes audio</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                        <input type="text" id="add-music-title" class="p-3 border rounded bg-white text-sm" placeholder="Nom du morceau">
-                        <input type="text" id="add-music-url" class="p-3 border rounded bg-white text-sm" placeholder="Lien d'un fichier .mp3">
-                    </div>
-                    <button onclick="addMusicItem()" class="bg-[#D36B4F] text-white px-6 py-2 rounded font-semibold mb-6">Ajouter le morceau</button>
-                    <div id="admin-music-list" class="space-y-2"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="contact" class="bg-[#FAF6EE] border-t border-[#1E352F]/10 py-16">
         <div class="max-w-4xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
                 <h2 class="font-serif text-5xl text-[#1E352F] mb-6">Contactez-nous</h2>
                 <p class="text-[#3D251E]/80 mb-6">Vous souhaitez programmer T-RAD pour un bal folk ou un concert ?</p>
-                <p class="text-sm text-[#3D251E]/80"><strong>📧 Email :</strong> contact@T-RAD-folk.fr</p>
+                <p class="text-sm text-[#3D251E]/80"><strong>📧 Email :</strong> TiRADfolk@gmail.com</p>
             </div>
             <form class="space-y-4" onsubmit="event.preventDefault(); alert('Message envoyé !');">
                 <input type="text" placeholder="Votre Nom" required class="w-full p-3 rounded border border-[#1E352F]/10 bg-white text-sm">
@@ -261,32 +133,24 @@
     </footer>
 
     <script>
-        // Charger ou créer les bases de données simulées dans le localStorage
-        function initDB(key, defaultVal) {
-            if (!localStorage.getItem(key)) {
-                localStorage.setItem(key, JSON.stringify(defaultVal));
-            }
-            return JSON.parse(localStorage.getItem(key));
-        }
+        // Nettoyage complet des anciennes données locales pour éviter les conflits de cache
+        localStorage.removeItem('T-RAD_texts');
+        localStorage.removeItem('T-RAD_agenda');
+        localStorage.removeItem('T-RAD_photos');
+        localStorage.removeItem('T-RAD_videos');
+        localStorage.removeItem('T-RAD_musics');
+        localStorage.removeItem('T-RAD_todos');
 
-        let texts = initDB('T-RAD_texts', defaultTexts);
-        let agenda = initDB('T-RAD_agenda', defaultAgenda);
-        let photos = initDB('T-RAD_photos', defaultPhotos);
-        let videos = initDB('T-RAD_videos', defaultVideos);
-        let musics = initDB('T-RAD_musics', defaultMusic);
-        let todos = initDB('T-RAD_todos', []);
-
-        // --- AFFICHAGE RENDU SITE PUBLIC ---
         function renderSite() {
             // Textes
-            document.getElementById('hero-subtitle').innerText = texts.subtitle;
-            document.getElementById('news-title').innerText = texts.newsTitle;
-            document.getElementById('news-text').innerText = texts.newsText;
-            document.getElementById('bio-text').innerText = texts.bioText;
+            document.getElementById('hero-subtitle').innerText = siteTexts.subtitle;
+            document.getElementById('news-title').innerText = siteTexts.newsTitle;
+            document.getElementById('news-text').innerText = siteTexts.newsText;
+            document.getElementById('bio-text').innerText = siteTexts.bioText;
 
-            // Agenda public (avec gestion des 3 boutons optionnels)
+            // Agenda public
             const agendaDiv = document.getElementById('agenda-list');
-            agendaDiv.innerHTML = agenda.map(item => {
+            agendaDiv.innerHTML = siteAgenda.map(item => {
                 let buttonsHtml = '';
                 if (item.ticketUrl) {
                     buttonsHtml += `<a href="${item.ticketUrl}" target="_blank" class="bg-[#D36B4F] text-white px-4 py-2 rounded text-sm hover:bg-[#D36B4F]/90 font-medium">🎫 Billetterie</a>`;
@@ -295,7 +159,7 @@
                     buttonsHtml += `<a href="${item.fbUrl}" target="_blank" class="bg-[#3B5998] text-white px-4 py-2 rounded text-sm hover:bg-[#3B5998]/90 font-medium">📅 Facebook</a>`;
                 }
                 if (item.orgUrl) {
-                    buttonsHtml += `<a href="${item.orgUrl}" target="_blank" class="bg-[#1E352F] text-white px-4 py-2 rounded text-sm hover:bg-[#1E352F]/90 font-medium">🌐 Infos Organisateur</a>`;
+                    buttonsHtml += `<a href="${item.orgUrl}" target="_blank" class="bg-[#1E352F] text-white px-4 py-2 rounded text-sm hover:bg-[#1E352F]/90 font-medium">🌐 Organisateur</a>`;
                 }
 
                 return `
@@ -314,232 +178,21 @@
 
             // Photos publiques
             const photosDiv = document.getElementById('photos-grid');
-            photosDiv.innerHTML = photos.map(url => `
+            photosDiv.innerHTML = sitePhotos.map(url => `
                 <img src="${url}" class="rounded-xl object-cover h-64 w-full shadow-md hover:scale-105 transition-transform" alt="Photo">
             `).join('');
 
             // Vidéos publiques
             const videosDiv = document.getElementById('videos-grid');
-            videosDiv.innerHTML = videos.map(vid => `
+            videosDiv.innerHTML = siteVideos.map(vid => `
                 <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-lg border border-[#1E352F]/10 bg-[#1E352F] flex flex-col items-center justify-center text-white gap-2">
                     <span class="font-serif italic text-lg px-4 text-center">${vid.title}</span>
                     ${vid.url ? `<a href="${vid.url}" target="_blank" class="bg-[#D36B4F] p-4 rounded-full hover:scale-110 transition-transform">▶ Regarder</a>` : `<span class="text-xs text-gray-400">Vidéo bientôt disponible</span>`}
                 </div>
             `).join('');
-
-            // Musiques Privées
-            const musicDiv = document.getElementById('music-list');
-            musicDiv.innerHTML = musics.map(m => `
-                <div class="p-3 bg-[#FAF6EE] rounded-lg border border-[#1E352F]/5">
-                    <p class="text-sm font-semibold text-[#1E352F]">${m.title}</p>
-                    <audio controls class="w-full mt-2"><source src="${m.url}" type="audio/mpeg"></audio>
-                </div>
-            `).join('');
-
-            // To-Do list
-            const todoList = document.getElementById('todo-list');
-            todoList.innerHTML = todos.map(t => `
-                <li onclick="toggleTodo(${t.id})" class="flex items-center gap-3 cursor-pointer p-2 rounded hover:bg-[#FAF6EE]/50">
-                    <input type="checkbox" ${t.done ? 'checked' : ''} class="h-4 w-4">
-                    <span class="${t.done ? 'line-through text-gray-400' : ''}">${t.text}</span>
-                </li>
-            `).join('');
         }
 
-        // --- AUTHENTIFICATION ---
-        function checkPriveLogin() {
-            const pass = document.getElementById('prive-pass').value;
-            if (pass === '2026') {
-                document.getElementById('prive-login-box').classList.add('hidden');
-                document.getElementById('prive-content').classList.remove('hidden');
-            } else {
-                document.getElementById('prive-error').classList.remove('hidden');
-            }
-        }
-
-        function checkAdminLogin() {
-            const pass = document.getElementById('admin-pass').value;
-            if (pass === 'admin') {
-                document.getElementById('admin-login-box').classList.add('hidden');
-                document.getElementById('admin-content').classList.remove('hidden');
-                initAdminInputs();
-                renderAdmin();
-            } else {
-                document.getElementById('admin-error').classList.remove('hidden');
-            }
-        }
-
-        // --- FONCTIONS ADMIN ---
-        function initAdminInputs() {
-            document.getElementById('edit-hero-subtitle').value = texts.subtitle;
-            document.getElementById('edit-news-title').value = texts.newsTitle;
-            document.getElementById('edit-news-text').value = texts.newsText;
-            document.getElementById('edit-bio-text').value = texts.bioText;
-        }
-
-        function saveTexts() {
-            texts.subtitle = document.getElementById('edit-hero-subtitle').value;
-            texts.newsTitle = document.getElementById('edit-news-title').value;
-            texts.newsText = document.getElementById('edit-news-text').value;
-            texts.bioText = document.getElementById('edit-bio-text').value;
-            localStorage.setItem('T-RAD_texts', JSON.stringify(texts));
-            renderSite();
-            alert("Textes enregistrés !");
-        }
-
-        function renderAdmin() {
-            // Liste admin des concerts
-            const adminAgenda = document.getElementById('admin-agenda-list');
-            adminAgenda.innerHTML = agenda.map(item => `
-                <div class="flex justify-between items-center bg-white p-3 rounded shadow-sm border border-gray-100">
-                    <div class="text-xs">
-                        <strong>${item.date}</strong> - ${item.title} (${item.place})<br>
-                        <span class="text-gray-400">Liens : [Billet: ${item.ticketUrl ? 'oui':'non'}] [FB: ${item.fbUrl ? 'oui':'non'}] [Org: ${item.orgUrl ? 'oui':'non'}]</span>
-                    </div>
-                    <button onclick="deleteAgendaItem(${item.id})" class="bg-red-500 text-white px-2 py-1 rounded text-xs hover:bg-red-600">Supprimer</button>
-                </div>
-            `).join('');
-
-            // Liste admin des photos
-            const adminPhotos = document.getElementById('admin-photos-list');
-            adminPhotos.innerHTML = photos.map((url, idx) => `
-                <div class="relative group bg-black rounded overflow-hidden h-24">
-                    <img src="${url}" class="object-cover w-full h-full opacity-80">
-                    <button onclick="deletePhotoItem(${idx})" class="absolute inset-0 bg-red-600/95 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-xs font-bold">Supprimer</button>
-                </div>
-            `).join('');
-
-            // Liste admin des vidéos
-            const adminVideos = document.getElementById('admin-videos-list');
-            adminVideos.innerHTML = videos.map(vid => `
-                <div class="flex justify-between items-center bg-white p-3 rounded shadow-sm">
-                    <span class="text-xs">${vid.title}</span>
-                    <button onclick="deleteVideoItem(${vid.id})" class="bg-red-500 text-white px-2 py-1 rounded text-xs">Supprimer</button>
-                </div>
-            `).join('');
-
-            // Liste admin des musiques
-            const adminMusic = document.getElementById('admin-music-list');
-            adminMusic.innerHTML = musics.map(m => `
-                <div class="flex justify-between items-center bg-white p-3 rounded shadow-sm">
-                    <span class="text-xs">${m.title}</span>
-                    <button onclick="deleteMusicItem(${m.id})" class="bg-red-500 text-white px-2 py-1 rounded text-xs">Supprimer</button>
-                </div>
-            `).join('');
-        }
-
-        // Ajouter / Supprimer Agenda avec les 3 URLs
-        function addAgendaItem() {
-            const date = document.getElementById('add-date').value;
-            const title = document.getElementById('add-title').value;
-            const place = document.getElementById('add-place').value;
-            const ticketUrl = document.getElementById('add-ticket-url').value;
-            const fbUrl = document.getElementById('add-fb-url').value;
-            const orgUrl = document.getElementById('add-org-url').value;
-            
-            if (date && title && place) {
-                agenda.push({ 
-                    id: Date.now(), 
-                    date, 
-                    title, 
-                    place,
-                    ticketUrl,
-                    fbUrl,
-                    orgUrl
-                });
-                localStorage.setItem('T-RAD_agenda', JSON.stringify(agenda));
-                document.getElementById('add-date').value = '';
-                document.getElementById('add-title').value = '';
-                document.getElementById('add-place').value = '';
-                document.getElementById('add-ticket-url').value = '';
-                document.getElementById('add-fb-url').value = '';
-                document.getElementById('add-org-url').value = '';
-                renderSite();
-                renderAdmin();
-            }
-        }
-        function deleteAgendaItem(id) {
-            agenda = agenda.filter(item => item.id !== id);
-            localStorage.setItem('T-RAD_agenda', JSON.stringify(agenda));
-            renderSite();
-            renderAdmin();
-        }
-
-        // Ajouter / Supprimer Photos
-        function addPhotoItem() {
-            const url = document.getElementById('add-photo-url').value;
-            if (url) {
-                photos.push(url);
-                localStorage.setItem('T-RAD_photos', JSON.stringify(photos));
-                document.getElementById('add-photo-url').value = '';
-                renderSite();
-                renderAdmin();
-            }
-        }
-        function deletePhotoItem(index) {
-            photos.splice(index, 1);
-            localStorage.setItem('T-RAD_photos', JSON.stringify(photos));
-            renderSite();
-            renderAdmin();
-        }
-
-        // Ajouter / Supprimer Vidéos
-        function addVideoItem() {
-            const title = document.getElementById('add-video-title').value;
-            const url = document.getElementById('add-video-url').value;
-            if (title) {
-                videos.push({ id: Date.now(), title, url });
-                localStorage.setItem('T-RAD_videos', JSON.stringify(videos));
-                document.getElementById('add-video-title').value = '';
-                document.getElementById('add-video-url').value = '';
-                renderSite();
-                renderAdmin();
-            }
-        }
-        function deleteVideoItem(id) {
-            videos = videos.filter(v => v.id !== id);
-            localStorage.setItem('T-RAD_videos', JSON.stringify(videos));
-            renderSite();
-            renderAdmin();
-        }
-
-        // Ajouter / Supprimer Musiques
-        function addMusicItem() {
-            const title = document.getElementById('add-music-title').value;
-            const url = document.getElementById('add-music-url').value;
-            if (title) {
-                musics.push({ id: Date.now(), title, url });
-                localStorage.setItem('T-RAD_musics', JSON.stringify(musics));
-                document.getElementById('add-music-title').value = '';
-                document.getElementById('add-music-url').value = '';
-                renderSite();
-                renderAdmin();
-            }
-        }
-        function deleteMusicItem(id) {
-            musics = musics.filter(m => m.id !== id);
-            localStorage.setItem('T-RAD_musics', JSON.stringify(musics));
-            renderSite();
-            renderAdmin();
-        }
-
-        // To-Do list
-        function addTodo() {
-            const text = document.getElementById('todo-input').value;
-            if (text) {
-                todos.push({ id: Date.now(), text, done: false });
-                localStorage.setItem('T-RAD_todos', JSON.stringify(todos));
-                document.getElementById('todo-input').value = '';
-                renderSite();
-            }
-        }
-        function toggleTodo(id) {
-            todos = todos.map(t => t.id === id ? { ...t, done: !t.done } : t);
-            localStorage.setItem('T-RAD_todos', JSON.stringify(todos));
-            renderSite();
-        }
-
-        // Démarrage initial
+        // Lancement du site
         renderSite();
     </script>
 </body>
