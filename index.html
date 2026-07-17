@@ -77,7 +77,6 @@ Une invitation chaleureuse et vibrante à entrer directement dans la danse.`
                 <a href="#accueil" class="font-medium text-[#1E352F]/80 hover:text-[#D36B4F] transition-colors">Accueil</a>
                 <a href="#agenda" class="font-medium text-[#1E352F]/80 hover:text-[#D36B4F] transition-colors">Agenda</a>
                 <a href="#medias" class="font-medium text-[#1E352F]/80 hover:text-[#D36B4F] transition-colors">Médias</a>
-                <a href="#contact" class="font-medium text-[#1E352F]/80 hover:text-[#D36B4F] transition-colors">Contact</a>
             </nav>
         </div>
     </header>
@@ -125,27 +124,18 @@ Une invitation chaleureuse et vibrante à entrer directement dans la danse.`
         </div>
     </section>
 
-    <section id="contact" class="bg-[#FAF6EE] border-t border-[#1E352F]/10 py-16">
-        <div class="max-w-4xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-                <h2 class="font-serif text-5xl text-[#1E352F] mb-6">Contactez-nous</h2>
-                <p class="text-[#3D251E]/80 mb-6">Vous souhaitez programmer T-RAD pour un bal folk ou un concert ?</p>
-                <p class="text-sm text-[#3D251E]/80">
-                    <strong>📧 Email :</strong> 
-                    <a href="mailto:TiRADfolk@gmail.com" class="text-[#D36B4F] hover:underline font-semibold">TiRADfolk@gmail.com</a>
-                </p>
-            </div>
-            <form class="space-y-4" onsubmit="event.preventDefault(); alert('Message envoyé !');">
-                <input type="text" placeholder="Votre Nom" required class="w-full p-3 rounded border border-[#1E352F]/10 bg-white text-sm">
-                <input type="email" placeholder="Votre Email" required class="w-full p-3 rounded border border-[#1E352F]/10 bg-white text-sm">
-                <textarea placeholder="Votre Message" rows="4" required class="w-full p-3 rounded border border-[#1E352F]/10 bg-white text-sm"></textarea>
-                <button type="submit" class="w-full bg-[#D36B4F] text-white py-3 rounded font-semibold">Envoyer</button>
-            </form>
+    <footer class="bg-[#1E352F] text-[#FAF6EE] py-12 mt-auto text-center border-t border-[#FAF6EE]/10">
+        <div class="max-w-xl mx-auto px-4 space-y-4">
+            <p class="text-lg font-serif">Nous contacter pour un bal ou concert :</p>
+            <p class="text-xl font-bold">
+                📧 
+                <a href="mailto:TiRADfolk@gmail.com" class="text-[#D36B4F] hover:underline transition-all">
+                    TiRADfolk@gmail.com
+                </a>
+            </p>
+            <div class="h-[1px] bg-[#FAF6EE]/10 my-6 w-1/2 mx-auto"></div>
+            <p class="text-xs text-[#FAF6EE]/60">© 2026 T-RAD. Tous droits réservés.</p>
         </div>
-    </section>
-
-    <footer class="bg-[#1E352F] text-white/90 py-10 mt-auto text-center text-sm">
-        <p>© 2026 T-RAD. Tous droits réservés.</p>
     </footer>
 
     <script>
@@ -169,47 +159,4 @@ Une invitation chaleureuse et vibrante à entrer directement dans la danse.`
             agendaDiv.innerHTML = siteAgenda.map(item => {
                 let buttonsHtml = '';
                 if (item.ticketUrl) {
-                    buttonsHtml += `<a href="${item.ticketUrl}" target="_blank" class="bg-[#D36B4F] text-white px-4 py-2 rounded text-sm hover:bg-[#D36B4F]/90 font-medium">🎫 Organisateur</a>`;
-                }
-                if (item.fbUrl) {
-                    buttonsHtml += `<a href="${item.fbUrl}" target="_blank" class="bg-[#3B5998] text-white px-4 py-2 rounded text-sm hover:bg-[#3B5998]/90 font-medium">📅 Lien</a>`;
-                }
-                if (item.orgUrl) {
-                    buttonsHtml += `<a href="${item.orgUrl}" target="_blank" class="bg-[#1E352F] text-white px-4 py-2 rounded text-sm hover:bg-[#1E352F]/90 font-medium">🌐 Lien</a>`;
-                }
-
-                return `
-                    <div class="bg-white rounded-xl p-6 shadow-sm border border-[#1E352F]/5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                        <div>
-                            <span class="text-sm font-semibold text-[#D36B4F]">${item.date}</span>
-                            <h3 class="font-serif text-xl text-[#1E352F] font-bold mt-1">${item.title}</h3>
-                            <p class="text-sm text-[#3D251E]/60">${item.place}</p>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            ${buttonsHtml || '<span class="text-xs italic text-gray-400">Entrée libre / Pas de lien</span>'}
-                        </div>
-                    </div>
-                `;
-            }).join('');
-
-            // Photos publiques
-            const photosDiv = document.getElementById('photos-grid');
-            photosDiv.innerHTML = sitePhotos.map(url => `
-                <img src="${url}" class="rounded-xl object-cover h-64 w-full shadow-md hover:scale-105 transition-transform" alt="Photo">
-            `).join('');
-
-            // Vidéos publiques
-            const videosDiv = document.getElementById('videos-grid');
-            videosDiv.innerHTML = siteVideos.map(vid => `
-                <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-lg border border-[#1E352F]/10 bg-[#1E352F] flex flex-col items-center justify-center text-white gap-2">
-                    <span class="font-serif italic text-lg px-4 text-center">${vid.title}</span>
-                    ${vid.url ? `<a href="${vid.url}" target="_blank" class="bg-[#D36B4F] p-4 rounded-full hover:scale-110 transition-transform">▶ Regarder</a>` : `<span class="text-xs text-gray-400">Vidéo bientôt disponible</span>`}
-                </div>
-            `).join('');
-        }
-
-        // Lancement du site
-        renderSite();
-    </script>
-</body>
-</html>
+                    buttonsHtml += `<a href="${item
